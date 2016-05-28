@@ -50,7 +50,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        $roles = app()->make('sentinel.roles')->createModel()->all();
+        $roles = app()->make('sentinel.roles')->createModel()->with('roles')->all();
 
         return view('Centaur::users.create', ['roles' => $roles]);
     }
